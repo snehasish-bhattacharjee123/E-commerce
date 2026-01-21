@@ -1,24 +1,35 @@
-/* index.css or global.css */
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-
-/* Import the Inter font from Google Fonts or a local source */
-/* Corrected URL to import the specific font and display swap */
+/* 1. Imports must come first. Add the full Google Fonts URL. */
 @import url('https://fonts.googleapis.com');
+@import "tailwindcss";
 
+/* 2. Define your theme variables. 
+   This automatically creates utilities like bg-brand-cream and font-inter. */
+@theme {
+  --color-brand-cream: #fdfaf1;      /* Replace with your hex codes */
+  --color-brand-text: #2d2a26;
+  --color-brand-white: #ffffff;
+  --color-brand-dark-brown: #3d2b1f;
+  
+  --font-inter: "Inter", sans-serif;
+}
 
-/* Set the base styles using utility classes */
+/* 3. Set global base styles. 
+   In v4, use standard CSS with your new variables for the best performance. */
 @layer base {
   body {
-    /* Sets the default background and text color of the whole body */
-    @apply bg-brand-cream text-brand-text font-inter; 
+    background-color: var(--color-brand-cream);
+    color: var(--color-brand-text);
+    font-family: var(--font-inter);
+    @apply antialiased; /* Standard Tailwind utility still works via @apply */
   }
-  /* Optional: Override the primary background color for specific sections back to pure white */
+}
+
+/* 4. Custom Utility Components */
+@layer components {
   .bg-white-section {
     @apply bg-brand-white;
   }
-  /* Optional: Utility for footer specific background */
+  
   .bg-footer {
     @apply bg-brand-dark-brown;
   }

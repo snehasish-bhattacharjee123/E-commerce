@@ -1,37 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import { HiMagnifyingGlass, HiXMark } from "react-icons/hi2";
-import { useState } from "react";
 
 function SearchBar() {
-  const [searchterm, setSearchterm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleSearchtoggle = () => {
+  const handleSearchToggle = () => {
     setIsOpen(!isOpen);
+    if (isOpen) setSearchTerm(""); // Clear search when closing
   };
+
   return (
-    <div>
-      {/* SearchBar Component */}
+    <div 
+      className={`flex items-center justify-center transition-all duration-300 ${
+        isOpen 
+          ? "absolute top-0 left-0 w-full bg-brand-white h-24 z-50 px-4" 
+          : "w-auto"
+      }`}
+    >
       {isOpen ? (
-        <form className="relative flex items-center justify-center w-full">
+        <form 
+          className="relative flex items-center justify-center w-full max-w-3xl"
+          onSubmit={(e) => e.preventDefault()}
+        >
           <input
             type="text"
+            autoFocus
             placeholder="Search products..."
             value={searchTerm}
-            // onChange={(e) => setSearchterm(e.target.value)}
-            className="bg-gray-100 rounded-lg pl-2 pr-12 focus:outline-none w-full placeholder:text-gray-700 py-2 px-4 w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full px-4 py-3 pr-12 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-dark-brown placeholder:text-gray-500 text-brand-text"
           />
           <button
-            type="submit"
-            onClick={handleSearchtoggle}
-            className="absolute right-2"
+            type="button" // Change to button to prevent form submission
+            onClick={handleSearchToggle}
+            className="absolute transition-transform right-4 hover:scale-110 "
+            aria-label="Close search"
           >
-            <HiXMark className="h-6 w-6 text-gray-700" />
+            <HiXMark className="w-6 h-6 text-gray-700 cursor-pointer" />
           </button>
         </form>
       ) : (
-        <button onClick={handleSearchtoggle}>
-          <HiMagnifyingGlass className="h-6 w-6 text-gray-700" />
+        <button 
+          onClick={handleSearchToggle} 
+          className="p-2 transition-colors rounded-full hover:bg-gray-100"
+          aria-label="Open search"
+        >
+          <HiMagnifyingGlass className="w-6 h-6 text-gray-700 cursor-pointer" />
         </button>
       )}
     </div>

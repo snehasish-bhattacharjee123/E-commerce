@@ -5,21 +5,21 @@ import { RiTwitterXLine } from "react-icons/ri";
 
 function Topbar() {
   return (
-    // Replaced bg-[#fb3306] with the custom brand color.
+   
     // Changed text-white to text-brand-cream for consistency with the new palette.
-    <div className="bg-brand-dark-brown text-brand-cream p-2">
-      <div className="container mx-auto flex justify-between items-center">
+    <div className="p-2 bg-brand-dark-brown text-brand-cream">
+      <div className="container flex items-center justify-between mx-auto">
         <div className="flex items-center space-x-4">
           {/* Updated hover colors to use brand-gold for accentuation */}
           <a href="#" className="hover:text-brand-gold">
-            <TbBrandMeta className="h-5 w-5" />
+            <TbBrandMeta className="w-5 h-5" />
           </a>
 
           <a href="#" className="hover:text-brand-gold">
-            <IoLogoInstagram className="h-5 w-5" />
+            <IoLogoInstagram className="w-5 h-5" />
           </a>
           <a href="#" className="hover:text-brand-gold">
-            <RiTwitterXLine className="h-5 w-5" />
+            <RiTwitterXLine className="w-5 h-5" />
           </a>
         </div>
 
