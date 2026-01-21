@@ -1,0 +1,25 @@
+/* index.css or global.css */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Import the Inter font from Google Fonts or a local source */
+/* Corrected URL to import the specific font and display swap */
+@import url('https://fonts.googleapis.com');
+
+
+/* Set the base styles using utility classes */
+@layer base {
+  body {
+    /* Sets the default background and text color of the whole body */
+    @apply bg-brand-cream text-brand-text font-inter; 
+  }
+  /* Optional: Override the primary background color for specific sections back to pure white */
+  .bg-white-section {
+    @apply bg-brand-white;
+  }
+  /* Optional: Utility for footer specific background */
+  .bg-footer {
+    @apply bg-brand-dark-brown;
+  }
+}
