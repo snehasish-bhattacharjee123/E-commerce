@@ -5,34 +5,35 @@ import { RiTwitterXLine } from "react-icons/ri";
 
 function Topbar() {
   return (
-   
-    // Changed text-white to text-brand-cream for consistency with the new palette.
-    <div className="p-2 bg-brand-dark-brown text-brand-cream">
+    /* Uses --color-brand-dark-brown and --color-brand-cream */
+    <div className="p-2 bg-brand-dark-brown text-brand-cream font-inter">
       <div className="container flex items-center justify-between mx-auto">
+        
+        {/* Social Icons with brand-gold hover effect */}
         <div className="flex items-center space-x-4">
-          {/* Updated hover colors to use brand-gold for accentuation */}
-          <a href="#" className="hover:text-brand-gold">
+          <a href="#" className="transition-colors hover:text-brand-gold">
             <TbBrandMeta className="w-5 h-5" />
           </a>
-
-          <a href="#" className="hover:text-brand-gold">
+          <a href="#" className="transition-colors hover:text-brand-gold">
             <IoLogoInstagram className="w-5 h-5" />
           </a>
-          <a href="#" className="hover:text-brand-gold">
+          <a href="#" className="transition-colors hover:text-brand-gold">
             <RiTwitterXLine className="w-5 h-5" />
           </a>
         </div>
 
-        <div className="text-sm text-center">
-          <span>We ship Worldwide ----</span>
+        {/* Shipping Text */}
+        <div className="text-sm font-medium tracking-wide">
+          <span>WE SHIP WORLDWIDE ————</span>
         </div>
 
+        {/* Contact Link */}
         <div className="text-sm">
-          {/* Updated hover colors to use brand-gold for accentuation */}
-          <a href="tel:+1234567890" className="hover:text-brand-gold">
-            Call Us: +1234567890
+          <a href="tel:+1234567890" className="transition-colors hover:text-brand-gold">
+            Call Us: +1 234 567 890
           </a>
         </div>
+        
       </div>
     </div>
   );

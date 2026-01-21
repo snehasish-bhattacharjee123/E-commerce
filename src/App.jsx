@@ -1,20 +1,21 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import ProductPage from "./pages/ProductPage";
-// import CartPage from "./pages/CartPage";
-// import CheckoutPage from "./pages/CheckoutPage";
-// import ProfilePage from "./pages/ProfilePage";    
 import UserLayout from "./components/Layout/UserLayout";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<UserLayout />} />
-        {/* <Route path="/product/:id" element={<ProductPage />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/checkout" element={<CheckoutPage />} />
-        <Route path="/profile" element={<ProfilePage />} /> */}
+        {/* UserLayout acts as the wrapper for all children routes */}
+        <Route path="/" element={<UserLayout />}>
+          {/* Index route renders at the parent's path ("/") */}
+          <Route index element={<Home />} />
+          
+          {/* Un-comment these as you create the files */}
+          {/* <Route path="product/:id" element={<ProductPage />} /> */}
+          {/* <Route path="cart" element={<CartPage />} /> */}
+        </Route>
       </Routes>
     </BrowserRouter>
   );
