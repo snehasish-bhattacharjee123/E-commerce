@@ -54,7 +54,7 @@ const Carousel = () => {
   return (
     <div className="relative w-full ">
       {/* Carousel wrapper */}
-      <div className="relative md:h-96 h-56 overflow-hidden rounded-lg md:h-96">
+      <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
         {slides.map((slide, index) => (
           <div
             key={index}
@@ -72,7 +72,7 @@ const Carousel = () => {
       </div>
 
       {/* Slider indicators */}
-      <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3">
+      <div className="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -88,7 +88,7 @@ const Carousel = () => {
       {/* Slider controls */}
       <button
         onClick={prevSlide}
-        className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        className="absolute top-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer start-0 group focus:outline-none"
       >
         <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60">
           <svg
@@ -110,7 +110,7 @@ const Carousel = () => {
 
       <button
         onClick={nextSlide}
-        className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        className="absolute top-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer end-0 group focus:outline-none"
       >
         <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60">
           <svg

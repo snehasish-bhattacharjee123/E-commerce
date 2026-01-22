@@ -30,7 +30,7 @@ function Navbar() {
             <img
               src={logoimage}
               alt="Markrin Logo"
-              className="h-8 w-auto object-contain"
+              className="object-contain w-auto h-8"
             />
 
             {/* 2. Brand Text */}
