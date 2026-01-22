@@ -8,10 +8,12 @@
   --color-brand-cream: #fdfaf1;      /* Replace with your hex codes */
   --color-brand-text: #2d2a26;
   --color-brand-white: #ffffff;
-  --color-brand-dark-brown: #3d2b1f;
+  --color-brand-dark-brown: #3f1700;
   
   --font-inter: "Inter", sans-serif;
 }
+
+/* f5bd63 */
 
 /* 3. Set global base styles. 
    In v4, use standard CSS with your new variables for the best performance. */

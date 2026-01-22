@@ -4,10 +4,11 @@ import {
   HiOutlineUser,
   HiOutlineShoppingBag,
   HiBars3BottomRight,
-} from "react-icons/hi2"; 
-import { IoMdClose } from 'react-icons/io';
+} from "react-icons/hi2";
+import { IoMdClose } from "react-icons/io";
 import SearchBar from "./SearchBar";
 import CartDrawer from "../Layout/CartDrawer";
+import logoimage from "../../assets/WhatsApp Image 2026-01-21 at 1.11.31 PM.jpeg";
 
 function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -18,23 +19,31 @@ function Navbar() {
 
   return (
     <>
-      <nav className="container flex items-center justify-between px-6 py-4 mx-auto font-inter">
+      <nav className="container flex items-center justify-between px-6 py-4 mx-auto font-inter bg-brand-cream">
         {/* Logo */}
         <div>
-          <Link 
-            to="/" 
-            className="text-2xl font-bold tracking-tighter uppercase text-brand-dark-brown"
+          <Link
+            to="/"
+            className="flex items-center gap-2 text-2xl font-bold tracking-tighter uppercase text-brand-dark-brown"
           >
-            MyLogo
+            {/* 1. Add your logo image here */}
+            <img
+              src={logoimage}
+              alt="Markrin Logo"
+              className="h-8 w-auto object-contain"
+            />
+
+            {/* 2. Brand Text */}
+            <span>Markrin</span>
           </Link>
         </div>
 
         {/* Navigation Links - Desktop */}
         <div className="hidden space-x-6 md:flex">
           {["Shop", "Collections", "About", "Contact"].map((item) => (
-            <Link 
+            <Link
               key={item}
-              to={`/${item.toLowerCase()}`} 
+              to={`/${item.toLowerCase()}`}
               className="text-sm font-medium uppercase transition-colors duration-200 text-brand-text hover:text-brand-gold"
             >
               {item}
@@ -57,7 +66,7 @@ function Navbar() {
           </button>
 
           <SearchBar />
-          
+
           {/* Mobile Menu Icon */}
           <button onClick={toggleNavDrawer} className="md:hidden">
             <HiBars3BottomRight className="w-6 h-6 text-brand-text" />
@@ -66,10 +75,10 @@ function Navbar() {
       </nav>
 
       {/* Cart Drawer Component */}
-      <CartDrawer drawerOpen={drawerOpen} toggleCartDrawer={toggleCartDrawer}/>
-      
+      <CartDrawer drawerOpen={drawerOpen} toggleCartDrawer={toggleCartDrawer} />
+
       {/* Mobile Navigation Drawer */}
-      <div 
+      <div
         className={`fixed top-0 left-0 w-3/4 sm:w-1/2 h-full bg-brand-cream shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
           navDrawerOpen ? "translate-x-0" : "-translate-x-full"
         }`}
@@ -79,15 +88,17 @@ function Navbar() {
             <IoMdClose className="w-6 h-6 text-brand-text" />
           </button>
         </div>
-        
+
         <div className="flex flex-col p-6 space-y-6">
-          <h2 className="text-xl font-bold tracking-tight uppercase text-brand-dark-brown">Menu</h2>
+          <h2 className="text-xl font-bold tracking-tight uppercase text-brand-dark-brown">
+            Menu
+          </h2>
           <nav className="flex flex-col space-y-4">
             {["Shop", "Collections", "About", "Contact"].map((item) => (
-              <Link 
+              <Link
                 key={item}
-                onClick={toggleNavDrawer} 
-                to={`/${item.toLowerCase()}`} 
+                onClick={toggleNavDrawer}
+                to={`/${item.toLowerCase()}`}
                 className="text-lg font-medium uppercase text-brand-text hover:text-brand-gold"
               >
                 {item}
@@ -99,8 +110,8 @@ function Navbar() {
 
       {/* Overlay */}
       {navDrawerOpen && (
-        <div 
-          className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm" 
+        <div
+          className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
           onClick={toggleNavDrawer}
         ></div>
       )}
