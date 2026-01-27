@@ -53,6 +53,11 @@ function Navbar() {
 
         {/* Right Icons */}
         <div className="flex items-center space-x-4">
+
+          <Link to="/admin" className="block bg-brand-cream hover:bg-brand-dark-brown hover:text-white  px-2 rounded-lg">
+            Admin
+          </Link>
+
           <Link to="/profile">
             <HiOutlineUser className="w-6 h-6 transition-colors duration-200 text-brand-text hover:text-brand-gold" />
           </Link>

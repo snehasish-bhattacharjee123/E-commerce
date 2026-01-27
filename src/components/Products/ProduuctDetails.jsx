@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { toast } from "sonner";
 import { RiHeartLine, RiTruckLine, RiShieldCheckLine } from "react-icons/ri";
 
+
 const selectedProduct = {
   name: "Classic White T-Shirt",
   price: "$29.99",

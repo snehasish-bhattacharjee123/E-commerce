@@ -6,6 +6,9 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import CollectionPage from "./pages/CollectionPage";
+import AdminLayout from "./components/Admin/AdminLayout"
+import AdminHomePage from './pages/AdminHomePage';
+import UserManagement from "./components/Admin/UserManagement";
 
 
 import { Toaster } from "sonner";
@@ -29,6 +32,10 @@ function App() {
           {/* <Route path="product/:id" element={<ProductPage />} /> */}
           {/* <Route path="cart" element={<CartPage />} /> */}
         </Route>
+          <Route path="/admin" element={<AdminLayout/>} >
+            <Route index element={<AdminHomePage />} />
+            <Route path="users" element={<UserManagement/>} />
+          </Route>
       </Routes>
     </BrowserRouter>
   );
